@@ -47,6 +47,46 @@ fittest parameter:
 
 But what if we agree that predicting future is impossible, and fittest to one event can be  and focus on just get ready to have a 'change' in any direction?
 
+### Why Node.js or Python?
+
+Cengiz knows.
+
+### Why Telegram and Binance?
+
+Just because practicality of development. I already have an account on binance, and Telegram BotFather rocks.
+
+### Genetic Algorithm
+
+*Resource and more to read: [Investopedia](https://www.investopedia.com/articles/financial-theory/11/using-genetic-algorithms-forecast-financial-markets.asp)*
+
+Trading rule parameters data is a one-dimensional vector, with direction and magnitude.
+each vector is a chromosome, each parameter is a gene. parameter's considered values (genes) are modified by natural selection.
+
+**[neuroevolution](https://www.mql5.com/en/articles/2225)** — similar to genetic programming, but genomes are artificial neural networks where evolution of weights at the specified network topology occurs, or besides evolution of weights topology evolution is also carried out.).
+
+#### Genetik Operations
+
+- crossover: Two-point crossing over
+- mutation
+- selection
+
+#### Steps (loop)
+
+1. Initialize a random population, where each chromosome is n-length, with n being the number of parameters. That is, a random number of parameters are established with n elements each.
+2. Select the chromosomes, or parameters, that increase desirable results (presumably net profit).
+3. Apply mutation or crossover operators to the selected parents and generate an offspring.
+4. Recombine the offspring and the current population to form a new population with the selection operator.
+
+#### Algobots
+
+Financial life: have an income, expenses to pay, die when money goes 0.
+Make Decision: buy, sell, nothing.
+execute: time interval or event detection.
+
+co-domination
+
+
+
 Each chromosome stores x different genes.
 
 value to fit: wallet_size
@@ -55,8 +95,6 @@ success condition: highest wallet_size from an 'event' cycle.
         when price stays in bollinger band middle, with 50 mfi and relatively average (or low) atr.
 
 instincts: fear, greed
-
-- [pump detector](https://github.com/RomanGorbatko/binance-pump-detector) / [whale watcher](https://github.com/uzillion/crypto-whale-watcher)
 
 adaptations: which sensors to consider to determine behavior
 event identification?
@@ -77,8 +115,21 @@ algotrading
 ## Roadmap
 
 1. Communicate with Binance. [python](https://github.com/sammchardy/python-binance) / [node](https://github.com/bparlan/bitprophet)
-2. ta-lib [node.talib](https://github.com/oransel/node-talib)
-2. telegram bot (gerçekten deneme için bu gerekli, yoksa kafayı yiycem)
-3. developing behaviour algorithms
-4. genetic algorithm [python] / [node](https://github.com/sripberger/gene-lib)
-5. webserver
+2. ta-lib. [node.talib](https://github.com/oransel/node-talib)
+3. telegram bot (for the sake of my insanity).
+4. developing behaviour algorithms.
+5. genetic algorithm. [python] / [node](https://github.com/sripberger/gene-lib)
+6. webserver.
+
+### Far Future
+
+Instincts as genes:
+
+- News Based Trading - Twitter data & StochAI
+- [pump detector](https://github.com/RomanGorbatko/binance-pump-detector) / [whale watcher](https://github.com/uzillion/crypto-whale-watcher)
+
+## Worth to mention
+
+- Thanks to Anas Ameziane from [Ozzo](https://www.ozzo.io) for being there.
+- The article.
+- [Self-optimization of EA: Evolutionary and Genetic Algorithms](https://www.mql5.com/en/articles/2225) by Vladimir Perervenko.
