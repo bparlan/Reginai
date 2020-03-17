@@ -1,11 +1,22 @@
 from binance.client import Client
 import configparser
+from telegram.ext import Updater, CommandHandler
+
+
+def hello(update, context):
+    update.message.reply_text(
+        'Hello {}'.format(update.message.from_user.first_name))
 
 
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-client = Client(config['DEFAULT']['API_KEY'], config['DEFAULT']['API_SECRET'])
+updater = Updater(config['TELEGRAM']['TOKEN'], use_context=True)
+updater.dispatcher.add_handler(CommandHandler('hello', hello))
+updater.start_polling()
+updater.idle()
+
+client = Client(config['BINANCE']['API_KEY'], config['BINANCE']['API_SECRET'])
 
 # get market depth
 depth = client.get_order_book(symbol='BNBBTC')
@@ -19,6 +30,7 @@ depth = client.get_order_book(symbol='BNBBTC')
 
 # get all symbol prices
 prices = client.get_all_tickers()
+
 
 # # withdraw 100 ETH
 # # check docs for assumptions around withdrawals

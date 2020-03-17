@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 python-binance = "*"
 pandas = "*"
-
+python-telegram-bot = "*"
 
 [requires]
 python_version = "3.6"
