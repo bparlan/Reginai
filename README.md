@@ -83,8 +83,9 @@ Financial life: have an income, expenses to pay, die when money goes 0.
 Make Decision: buy, sell, nothing.
 execute: time interval or event detection.
 
-co-domination
+[Genetic Algorithms in Trading](https://www.youtube.com/watch?v=GyXEY2mddvs) by Nir Azriel
 
+- co-dominance
 
 
 Each chromosome stores x different genes.
